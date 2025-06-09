@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>타이머 페이지</title>
+</head>
+<body>
+  <h2>몰입 타이머 시작 🎯</h2>
+  <p>쿼리: <span id="query"></span></p>
+  <script>
+    const q = new URLSearchParams(location.search).get("q");
+    document.getElementById("query").textContent = q;
+  </script>
+</body>
+</html>
