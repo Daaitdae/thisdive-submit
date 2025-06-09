@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>몰입 시작 중...</title>
+  <style>
+    body {
+      background-color: #fefaf6; /* Tally와 유사한 연한 베이지 */
+      color: #1c1c1c;
+      font-family: 'SUIT', 'Pretendard', sans-serif;
+      text-align: center;
+      padding-top: 140px;
+      margin: 0;
+    }
+    .message {
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+    .sub {
+      font-size: 14px;
+      color: #888;
+    }
+    .spinner {
+      margin: 40px auto;
+      width: 36px;
+      height: 36px;
+      border: 4px solid #ccc;
+      border-top-color: #444;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+  <div class="message">⏳ 몰입을 시작할 준비 중이에요...</div>
+  <div class="sub">타이머로 자동 이동 중입니다</div>
+  <div class="spinner"></div>
+
+  <script>
+    const route = localStorage.getItem('route') || 'custom';
+    const links = {
+      slot1: 'https://thisdive.com/timer?q=slot1',
+      custom: 'https://thisdive.com/timer?q=custom'
+    };
+
+    setTimeout(() => {
+      window.location.href = links[route];
+    }, 100); // 아주 빠르게 넘기되, UX 감도 위해 300~500ms로 조정 가능
+  </script>
+</body>
+</html>
